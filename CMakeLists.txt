@@ -1,0 +1,10 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+PROJECT(v2genpass)
+INCLUDE_DIRECTORIES(include) 
+
+FIND_PACKAGE(openssl REQUIRED)
+
+ADD_DEFINITIONS(-g -O2 -Wall)
+ADD_SUBDIRECTORY( lib out/v2passgen )
+ADD_SUBDIRECTORY( consoletool out/bin )

@@ -1,4 +1,4 @@
-#include <openssl/md5.h>
+#include "v2passgen.h"
 #include <string.h>
 
 // Print the MD5 sum as hex-digits.
@@ -9,10 +9,9 @@ void print_md5_sum(unsigned char* md) {
     }
 }
 
-int main(void) {
+void generatePassword(const char* masterpassword, const char* resource, int round) {
     unsigned char * tmp_hash;
-    const char *src = "12345";
-    tmp_hash = MD5(src, strlen(src), NULL);
+    tmp_hash = MD5(masterpassword, strlen(masterpassword), NULL);
     print_md5_sum(tmp_hash);
     return 0;
 }
