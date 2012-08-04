@@ -22,7 +22,7 @@ int main(void) {
 	}
 	resource[bytes_read-1] = 0;
 
-    generatePassword(masterPassword, resource, 1);
+	generatePassword(masterPassword, resource, 10);
 	free(masterPassword);
 	free(resource);
 
