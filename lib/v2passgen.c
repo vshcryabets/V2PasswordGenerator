@@ -7,6 +7,7 @@ void print_md5_sum(unsigned char* md) {
     for(i=0; i <MD5_DIGEST_LENGTH; i++) {
         printf("%02x",md[i]);
     }
+    printf("\n");
 }
 
 void generatePassword(const char* masterpassword, const char* resource, int round) {
@@ -27,6 +28,8 @@ void generatePassword(const char* masterpassword, const char* resource, int roun
     } while ( --round > 0 );
 
     print_md5_sum(md5_hash);
-
+    const char* password = convertToBase93(md5_hash, 16);
+    printf("Password \"%s\"\n", password);
+    free(password);
     return 0;
 }

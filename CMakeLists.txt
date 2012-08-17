@@ -5,6 +5,6 @@ INCLUDE_DIRECTORIES(include)
 
 FIND_PACKAGE(OpenSSL REQUIRED)
 
-ADD_DEFINITIONS(-g -O2 -Wall)
+ADD_DEFINITIONS(-g -O2 -Wall -std=c99)
 ADD_SUBDIRECTORY( lib out/v2passgen )
 ADD_SUBDIRECTORY( consoletool out/bin )
